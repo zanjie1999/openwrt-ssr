@@ -17,3 +17,14 @@ new-lede-ar71xx 下的ipk配合v1.4版本使用，含有订阅功能。
 
 其它可在安装完以上任意一组后选装。
 
+luci打开报错
+
+```
+/usr/lib/lua/luci/model/cbi/shadowsocksr/client.lua
+/usr/lib/lua/luci/model/cbi/shadowsocksr/client-config.lua
+```
+
+将
+``luci.sys.net.arptable() or {}``
+修改为
+``luci.ip.neighbors()``
